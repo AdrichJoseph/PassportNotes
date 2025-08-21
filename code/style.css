@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #F9FAFB;
+    color : #1F2937;
+    font-family: 'Roboto', sans-serif;
+    padding: 40px 64px;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* Main Layout */
+.container {
+    max-width: 1500px;
+    margin: 0 auto; /*centering the container*/
+}
+
+.header {
+    margin-bottom: 40px;
+    display: flex; /*to use flex box, In html we also put them in divs */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 68px;
+    height: 68px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.fact-form {
+    background-color: #ffffff;
+    margin-bottom: 40px;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-radius: 16px;
+    background-color: #f5e0ab;
+}
+
+
+/* Layouts */
+.main {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 48px;
+}
+
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Elements*/
+
+h1 {
+    font-size: 42px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Helvetica;
+    line-height: 1;
+    color: #111827
+}
+
+.category {
+    margin-bottom: 16px;
+}
+
+.fact {
+    font-size: 20px;
+    line-height: 1.4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5e0ab;
+    margin-bottom: 16px;
+    padding: 16px 30px;
+    letter-spacing: -1px;
+
+    display: flex;
+    align-items: center;
+    
+    gap: 24px;
+    border-radius: 16px;
+}
+
+
+@media (max-width: 1200px) {
+  .fact {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+}
+
+
+.tag {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    border-radius: 100px;
+
+}
+
+.vote-buttons {
+    margin-left: auto;
+    flex-shrink: 0; /* Prevent shrinking */
+
+    display: flex;
+    gap: 8px;
+}
+
+.vote-buttons button{
+    border: none;
+    background-color: #E5E7EB;
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 100px;
+    color: inherit;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .03s;
+}
+
+.vote-buttons button:hover {
+    background-color: #D1D5DB;
+}
+
+ul {
+    list-style : none;
+}
+
+.source:link,
+.source:visited {
+    color: #6B7280; 
+    text-decoration: none;
+    margin-left: 12px;
+    transition: 0.5s;
+}
+
+
+
+.source:hover {
+    color: #001F3F; 
+}
+
+.source.active {
+    color: green; 
+}
+
+.btn:hover {
+    transform: translateY(-3px); /* Upward lift */
+    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.2); /* Softer, deeper blue shadow */
+    filter: brightness(110%); /* Subtle brighten for vibrancy */
+    transition: all 0.3s ease;
+}
+
+.btn {
+    border: none;
+    font-family: "Roboto", sans-serif;
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: 17px;
+    padding: 16px 0 13px;
+    background-color: #6B7280;
+    color: white;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-large {
+    font-size: 20px;
+    padding: 20px 32px 17px;
+    background-color: #fff68b;
+    Color: Black
+}
+
+.btn-all-categories {
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.btn-category {
+    width: 100%;
+    background-color: none;
+}
+
+.fact-form input, 
+.fact-form select{
+    width: 220px;
+    background-color: #fcf9f9;
+    border: none;
+    border-radius: 100px;
+    padding: 16px;
+    font-size: 18px;
+}
+
+
+
+.fact-form input::placeholder {
+    color: #9CA3AF;
+}
+
+.fact-form input:first-child {
+    flex-grow: 1; /* Take up remaining space */
+}
+
+.fact-form span {
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 18px;
+}
+
+@media (max-width: 1000px) {
+  body {
+    padding: 32px 48px;
+  }
+  .fact-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .fact-form input,
+  .fact-form select {
+    width: auto;
+  }
+}
