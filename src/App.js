@@ -3,56 +3,13 @@ import supabase from './supabase'; // Importing supabase for future use
 import "./style.css";
 
 
-const initialFacts = [
-  {
-    id: 1,
-    text: "React is being developed by Meta (formerly facebook)",
-    source: "https://opensource.fb.com/",
-    continent: "asia",
-    votesInteresting: 24,
-    votesMindblowing: 9,
-    votesFalse: 4,
-    createdIn: 2021,
-  },
-  {
-    id: 2,
-    text: "Millennial dads spend 3 times as much time with their kids than their fathers spent with them. In 1982, 43% of fathers had never changed a diaper. Today, that number is down to 3%",
-    source: "https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids",
-    continent: "north america",
-    votesInteresting: 11,
-    votesMindblowing: 2,
-    votesFalse: 0,
-    createdIn: 2019,
-  },
-  {
-    id: 3,
-    text: "Lisbon is the capital of Portugal",
-    source: "https://en.wikipedia.org/wiki/Lisbon",
-    continent: "africa",
-    votesInteresting: 8,
-    votesMindblowing: 3,
-    votesFalse: 1,
-    createdIn: 2015,
-  },
-];
 
-function Counter() {
-  const [count, setCount] = useState(0);
 
-  return (
-    <div>
-      <span style={{ fontSize: "40px" }}>{count}</span>
-      <button className="btn btn-large" onClick={() => setCount((count) => count + 1)}>
-        +1
-      </button>
-    </div>
-  );
-}
 
 function App() {
   const [showForm, setShowForm] = useState(false);
   const [facts, setFacts] = useState([]);
-  const [isLoading, setIstLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [currentContinent, setCurrentContinent] = useState("all");
 
 
@@ -62,7 +19,7 @@ function App() {
     // from supabase api docs
     async function getFacts() 
     {
-      setIstLoading(true);
+      setIsLoading(true);
 
 
       // responsible for querying the database and filtering the data based on the selected continent
@@ -80,7 +37,7 @@ function App() {
       if(!error) setFacts(facts);
       else alert("There was a problem getting the notes from the database, please try again later");
 
-      setIstLoading(false);
+      setIsLoading(false);
     }
     getFacts();
   },  [currentContinent]); // Re-run when currentContinent changes
